@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "f42543a3-59ce-0d41-c943-49dd5cc17c10": {
+      "ProjectGuid": "f42543a3-59ce-0d41-c943-49dd5cc17c10",
+      "DisplayName": "Assembly-CSharp",
+      "ColorIndex": 0
+    },
+    "b79768ac-8cc3-af87-bc2d-29a1e5e9989d": {
+      "ProjectGuid": "b79768ac-8cc3-af87-bc2d-29a1e5e9989d",
+      "DisplayName": "Assembly-CSharp-firstpass",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Прочие файлы",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 2
+}
