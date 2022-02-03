@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6afa1c45c999cdf439f38283c54ef2a0, type: 3}
+  m_Name: StepSounds
+  m_EditorClassIdentifier: 
+  audioField:
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: cf3c523efae10bd4db32212f0f9d3ece, type: 3}
+  - audioType: 1
+    audioClip: {fileID: 8300000, guid: 3cd17468f21214a4598ed359030b76c3, type: 3}

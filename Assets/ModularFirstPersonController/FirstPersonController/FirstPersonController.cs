@@ -19,11 +19,12 @@ public class FirstPersonController : MonoBehaviour
 {
     private Rigidbody rb;
 
-    #region MyAnimation
+    //#region MyCsripts
     public Animator animator;
+    public AudioStore audioStore;
+    private string audioType;
     private AudioSource audioSource;
-    public AudioClip audioClip;
-    #endregion
+    //#endregion
 
     #region Camera Movement Variables
 
@@ -164,8 +165,11 @@ public class FirstPersonController : MonoBehaviour
         {
             if (isWalking)
             {
+               // audioSource.clip = audioStore.GetAudioClipByType(audioType);
                 audioSource.Play();
-                yield return new WaitForSeconds(audioSource.clip.length);
+                //AudioStore.Play();
+                print("isWalking");
+                yield return new WaitForSeconds(.5f);
             }
             else
                 yield return null;
@@ -481,6 +485,8 @@ public class FirstPersonController : MonoBehaviour
         {
             Debug.DrawRay(origin, direction * distance, Color.red);
             isGrounded = true;
+            print(hit.collider.tag);
+            audioType = hit.collider.tag;
         }
         else
         {
