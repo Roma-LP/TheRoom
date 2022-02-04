@@ -8,6 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -22,7 +23,7 @@ public class FirstPersonController : MonoBehaviour
     //#region MyCsripts
     public Animator animator;
     public AudioStore audioStore;
-    private string audioType;
+    private AudioType audioType;
     private AudioSource audioSource;
     //#endregion
 
@@ -122,7 +123,6 @@ public class FirstPersonController : MonoBehaviour
     // Internal Variables
     private bool isCrouched = false;
     private Vector3 originalScale;
-
     #endregion
     #endregion
 
@@ -136,12 +136,11 @@ public class FirstPersonController : MonoBehaviour
     // Internal Variables
     private Vector3 jointOriginalPos;
     private float timer = 0;
-
+    private AudioType currentStepAudio;
     #endregion
 
     private void Awake()
     {
-        StartCoroutine(WalkSound());
         audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
 
@@ -159,27 +158,11 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 
-    IEnumerator WalkSound()
-    {
-        while (true)
-        {
-            if (isWalking)
-            {
-               // audioSource.clip = audioStore.GetAudioClipByType(audioType);
-                audioSource.Play();
-                //AudioStore.Play();
-                print("isWalking");
-                yield return new WaitForSeconds(.5f);
-            }
-            else
-                yield return null;
-        }
-    }
-
     void Start()
     {
         if (lockCursor)
         {
+            //Cursor.lockState = CursorLockMode.Locked;
             Cursor.lockState = CursorLockMode.Locked;
         }
 
@@ -391,6 +374,7 @@ public class FirstPersonController : MonoBehaviour
         {
             HeadBob();
         }
+        PlayStepSound();
     }
 
     void FixedUpdate()
@@ -486,11 +470,44 @@ public class FirstPersonController : MonoBehaviour
             Debug.DrawRay(origin, direction * distance, Color.red);
             isGrounded = true;
             print(hit.collider.tag);
-            audioType = hit.collider.tag;
+            switch(hit.collider.tag)
+            {
+                case "Carpet":
+                    if (isSprinting)
+                        audioType = AudioType.CarpetSprint;
+                    else if (isWalking)
+                        audioType = AudioType.CarpetWalk;
+                    break;
+                case "Floor":
+                    if (isSprinting)
+                        audioType = AudioType.FloorSprint;
+                    else if (isWalking)
+                        audioType = AudioType.FloorWalk;
+                    break;
+            }
+            print("");
         }
         else
         {
             isGrounded = false;
+        }
+    }
+
+    private void PlayStepSound()
+    {
+        if (isWalking || isSprinting)
+        {
+            if (!audioSource.isPlaying || currentStepAudio != audioType)
+            {
+                currentStepAudio = audioType;
+                audioSource.clip = audioStore.GetAudioClipByType(audioType);
+                audioSource.Play();
+            }
+        }
+        else
+        {
+            if (audioSource.isPlaying)
+                audioSource.Stop();
         }
     }
 

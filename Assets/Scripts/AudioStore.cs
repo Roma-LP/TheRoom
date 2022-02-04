@@ -11,13 +11,19 @@ public class AudioStore : ScriptableObject
 {
     [SerializeField] private AudioField[] audioField;
     
-    public AudioClip GetAudioClipByType(string audioType)
+    public AudioClip GetAudioClipByType(AudioType audioType)
     {
-        return audioField.First(x => x.audioType.ToString() == audioType).audioClip;
+        return audioField.First(x => x.audioType == audioType).audioClip;
     }
 }
 
-public enum AudioType { Floor, Carpet }
+public enum AudioType
+{
+    FloorWalk,
+    FloorSprint,
+    CarpetWalk,
+    CarpetSprint
+}
 
 [Serializable]
 public class AudioField

@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioField:
   - audioType: 0
-    audioClip: {fileID: 8300000, guid: cf3c523efae10bd4db32212f0f9d3ece, type: 3}
+    audioClip: {fileID: 8300000, guid: a5fb11efd77d6784caa3c6e7c7018d53, type: 3}
   - audioType: 1
+    audioClip: {fileID: 8300000, guid: 5268832a1ea6bb742bd5d7e6879c7a43, type: 3}
+  - audioType: 2
     audioClip: {fileID: 8300000, guid: 3cd17468f21214a4598ed359030b76c3, type: 3}
+  - audioType: 3
+    audioClip: {fileID: 8300000, guid: fb2bf27b0623f9f43a362703fb31e07b, type: 3}

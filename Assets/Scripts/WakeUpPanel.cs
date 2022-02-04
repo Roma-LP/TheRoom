@@ -17,11 +17,11 @@ public class WakeUpPanel : MonoBehaviour
     
     void Start()
     {
+        second.onClick.AddListener(delegate { PrintData("dfdfdf"); });
 
     }
     void Update()
     {
-        
     }
 
     public void PrintData(string str)
