@@ -469,7 +469,7 @@ public class FirstPersonController : MonoBehaviour
         {
             Debug.DrawRay(origin, direction * distance, Color.red);
             isGrounded = true;
-            print(hit.collider.tag);
+            //print(hit.collider.tag);
             switch(hit.collider.tag)
             {
                 case "Carpet":
@@ -485,7 +485,6 @@ public class FirstPersonController : MonoBehaviour
                         audioType = AudioType.FloorWalk;
                     break;
             }
-            print("");
         }
         else
         {

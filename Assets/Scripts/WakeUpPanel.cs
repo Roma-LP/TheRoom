@@ -31,6 +31,7 @@ public class WakeUpPanel : MonoBehaviour
 
     private void OnMouseDown()
     {
+        
         print("Click");
     }
 }

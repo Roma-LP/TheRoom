@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Carpet
   - Floor
+  - WUR_0
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - 
   - InteractRaycast
   - Player
-  - 
+  - WUR_0
   - 
   - 
   - 

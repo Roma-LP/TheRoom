@@ -22,7 +22,8 @@ public enum AudioType
     FloorWalk,
     FloorSprint,
     CarpetWalk,
-    CarpetSprint
+    CarpetSprint,
+    WUR_ButtonClick
 }
 
 [Serializable]
