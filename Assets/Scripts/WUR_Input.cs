@@ -19,11 +19,14 @@ public class WUR_Input : MonoBehaviour
     private string password = "2314";
     private StringBuilder currentPassword;
 
+    public bool isLockOn { get; private set; }
+
     private void Awake()
     {
         currentDistanceRay = distanceRay;
         //audioSource = GetComponent<AudioSource>();
         currentPassword = new StringBuilder("0000");
+        isLockOn = true;
     }
 
     private enum ColorOfButton
@@ -110,7 +113,6 @@ public class WUR_Input : MonoBehaviour
     private void ClickButton(RaycastHit hit)
     {
         hit.collider.gameObject.GetComponent<Animator>().SetTrigger("Click");
-        //audioSource.clip=audioStore.GetAudioClipByType(AudioType.WUR_ButtonClick);
         audioSource.PlayOneShot(audioStore.GetAudioClipByType(AudioType.WUR_ButtonClick));
         switch (Enum.Parse<ColorOfButton>(hit.collider.name))
         {
@@ -167,6 +169,8 @@ public class WUR_Input : MonoBehaviour
 
         if(currentPassword.Equals(password))
         {
+            audioSource.PlayOneShot(audioStore.GetAudioClipByType(AudioType.CorrectPassword));
+            isLockOn = false;
             print("correct!");
         }
     }

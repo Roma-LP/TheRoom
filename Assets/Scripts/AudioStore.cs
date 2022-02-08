@@ -23,7 +23,11 @@ public enum AudioType
     FloorSprint,
     CarpetWalk,
     CarpetSprint,
-    WUR_ButtonClick
+    WUR_ButtonClick,
+    CorrectPassword,
+    OpenSlideDoor,
+    CloseSlideDoor,
+    TryOpenSlideDoor,
 }
 
 [Serializable]
