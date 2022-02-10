@@ -7,6 +7,7 @@ TagManager:
   - Carpet
   - Floor
   - WUR_0
+  - Window
   layers:
   - Default
   - TransparentFX

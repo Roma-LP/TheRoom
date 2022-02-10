@@ -28,6 +28,11 @@ public enum AudioType
     OpenSlideDoor,
     CloseSlideDoor,
     TryOpenSlideDoor,
+    GlassWalk,
+    GlassSprint,
+    SpaceSound,
+
+
 }
 
 [Serializable]

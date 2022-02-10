@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6afa1c45c999cdf439f38283c54ef2a0, type: 3}
+  m_Name: SFX
+  m_EditorClassIdentifier: 
+  audioField:
+  - audioType: 4
+    audioClip: {fileID: 8300000, guid: 541d0cc67da0a6a4f84b45aaa01198af, type: 3}
+  - audioType: 5
+    audioClip: {fileID: 8300000, guid: 7f3b2ce83db8d874a87acd9295480107, type: 3}
+  - audioType: 6
+    audioClip: {fileID: 8300000, guid: 2fc4f6cdeb8429f42bb93c7ed9943848, type: 3}
+  - audioType: 7
+    audioClip: {fileID: 8300000, guid: dd90d23ed64c95849a96fd5e7dd56255, type: 3}
+  - audioType: 8
+    audioClip: {fileID: 8300000, guid: 1ca347f6274d6e0449bba06d47f64b4a, type: 3}

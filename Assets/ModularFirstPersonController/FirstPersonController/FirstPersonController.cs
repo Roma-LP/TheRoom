@@ -484,6 +484,12 @@ public class FirstPersonController : MonoBehaviour
                     else if (isWalking)
                         audioType = AudioType.FloorWalk;
                     break;
+                case "Window":
+                    if (isSprinting)
+                        audioType = AudioType.GlassSprint;
+                    else if (isWalking)
+                        audioType = AudioType.GlassWalk;
+                    break;
             }
         }
         else
@@ -525,7 +531,7 @@ public class FirstPersonController : MonoBehaviour
             Crouch();
         }
     }
-
+    
     private void Crouch()
     {
         // Stands player up to full height
