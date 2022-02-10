@@ -359,6 +359,7 @@
 "Assets/Apartment_Door/Scripts/KeyController.cs"
 "Assets/Apartment_Door/Scripts/PlayerMovement.cs"
 "Assets/Breakable Windows/Scripts/BreakableWindow.cs"
+"Assets/FirstRoomInput.cs"
 "Assets/FurnishedCabin/Scripts/MoveableObject.cs"
 "Assets/FurnishedCabin/Scripts/MoveObjectController.cs"
 "Assets/Modern Doors Pack/Scripts/AutoDoor.cs"
