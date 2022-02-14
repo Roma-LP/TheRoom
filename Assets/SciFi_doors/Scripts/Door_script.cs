@@ -10,6 +10,8 @@ public class Door_script : MonoBehaviour
 
     private AudioSource audioSource;
 
+    private bool isLockOn = true;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -34,7 +36,7 @@ public class Door_script : MonoBehaviour
         {
 
 
-            switch (input.isLockOn)
+            switch (isLockOn)
             {
                 case true:
                     animator.SetTrigger("TryOpen");
@@ -50,7 +52,7 @@ public class Door_script : MonoBehaviour
 
     void OnTriggerExit()
     {
-        switch (input.isLockOn)
+        switch (isLockOn)
         {
             case true:
                 
@@ -60,5 +62,10 @@ public class Door_script : MonoBehaviour
                 audioSource.PlayOneShot(audioStore.GetAudioClipByType(AudioType.CloseSlideDoor));
                 break;
         }
+    }
+    public void Open()
+    {
+        audioSource.PlayOneShot(audioStore.GetAudioClipByType(AudioType.CorrectPassword));
+        isLockOn = false;
     }
 }

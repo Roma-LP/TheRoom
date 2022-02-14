@@ -1,10 +1,20 @@
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using System.Linq;
 using System;
+using Cinemachine;
+using TMPro;
 
 public class FirstRoomInput : MonoBehaviour
 {
-    public bool isLockOn { get; private set; }
+    private bool isLockOn = true;
+    public UnityEvent OnPlayerEnter;
+    public UnityEvent OnPlayerExit;
+    public UnityEvent OnOpenedDoor;
+    [SerializeField] private CinemachineVirtualCamera panelCamera;
+
 
     private bool[] correctPassword = {
         false, false,  true,  true,  true,  true,  true,  true,  true, false,
@@ -13,36 +23,40 @@ public class FirstRoomInput : MonoBehaviour
         false,  true,  true,  true,  true,  true,  true,  true,  true, false,
         false, false,  true,  true, false,  true,  true, false, false, false,
     };
+    //private bool[] correctPassword = {
+    //     true, false, false, false, false, false, false, false, false, false,
+    //    false, false, false, false, false, false, false, false, false, false,
+    //    false, false, false, false, false, false, false, false, false, false,
+    //    false, false, false, false, false, false, false, false, false, false,
+    //    false, false, false, false, false, false, false, false, false, false,
+    //};
 
-    private bool[] inputPassword; /*= {
-        true, false,  true,  true,  true,  true,  true,  true,  true, false,
-         true,  true, false, false, false,  true,  true, false,  true,  true,
-        false,  true, false, false, false, false,  true, false,  true, false,
-        false,  true,  true,  true,  true,  true,  true,  true,  true, false,
-        false, false,  true,  true, false,  true,  true, false, false, false,
-    };*/
+    private bool[] inputPassword;
+
     void Start()
     {
         print("correctPassword.Length - " + correctPassword.Length);
         inputPassword = new bool[50];
-        print("inputPassword.Length - " +inputPassword.Length);
-        print("CheckPassword - "+CheckPassword());
+        print("inputPassword.Length - " + inputPassword.Length);
+        print("CheckPassword - " + CheckPassword());
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void OnClickButton(string nameButton)
     {
-        inputPassword[int.Parse(nameButton)-1] = !inputPassword[int.Parse(nameButton)-1];
-        if(CheckPassword())
+        inputPassword[int.Parse(nameButton) - 1] = !inputPassword[int.Parse(nameButton) - 1];
+        if (CheckPassword())
         {
-            isLockOn = false;
+            OnOpenedDoor?.Invoke();
             print("correct!");
         }
+    }
+    public void OnClickRightButton(TMP_Text text)
+    {
+        if(String.IsNullOrEmpty(text.text))
+        {
+        text.text = "X";
+        }
+        else
+            text.text = String.Empty;
     }
 
     private bool CheckPassword()
@@ -53,15 +67,22 @@ public class FirstRoomInput : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Cursor.lockState = CursorLockMode.None;
+        PlayerEnter();
     }
     private void OnTriggerExit(Collider other)
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        PlayerExit();
     }
 
-    public void Chehehehehe(string str)
+    private void PlayerEnter()
     {
-        print(str);
+        panelCamera.enabled = true;
+        OnPlayerEnter?.Invoke();
+    }
+
+    private void PlayerExit()
+    {
+        panelCamera.enabled = false;
+        OnPlayerExit?.Invoke();
     }
 }
