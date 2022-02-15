@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class PC_Switcher : MonoBehaviour
 {
     [SerializeField] private UnityEvent OnPlayerEnter;
-    public UnityEvent OnPlayerExit;
+    [SerializeField] private UnityEvent OnPlayerExit;
 
     private void OnTriggerEnter(Collider other)
     {

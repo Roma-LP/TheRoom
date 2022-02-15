@@ -107,6 +107,7 @@
     <Compile Include="Assets\Scripts\Daytime.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
+    <Compile Include="Assets\Scripts\LevelInteract.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
     <Compile Include="Assets\Scripts\Interface\IInteractable.cs" />
     <Compile Include="Assets\SciFi_doors\Scripts\Door_script.cs" />
@@ -117,7 +118,7 @@
     <Compile Include="Assets\Modern Doors Pack\Scripts\Key.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Scripts\CanvasPlayerManager.cs" />
-    <Compile Include="Assets\Scripts\LevelInteract.cs" />
+    <Compile Include="Assets\Scripts\FirstRoom\Table_Enter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

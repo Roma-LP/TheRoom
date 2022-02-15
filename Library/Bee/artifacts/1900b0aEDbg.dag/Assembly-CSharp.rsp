@@ -375,6 +375,7 @@
 "Assets/Scripts/CanvasPlayerManager.cs"
 "Assets/Scripts/Daytime.cs"
 "Assets/Scripts/FirstRoom/PC_Switcher.cs"
+"Assets/Scripts/FirstRoom/Table_Enter.cs"
 "Assets/Scripts/FirstRoomInput.cs"
 "Assets/Scripts/Interface/IInteractable.cs"
 "Assets/Scripts/LevelInteract.cs"

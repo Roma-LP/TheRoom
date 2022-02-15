@@ -31,8 +31,8 @@ public enum AudioType
     GlassWalk,
     GlassSprint,
     SpaceSound,
-
-
+    FR_LevelOn,
+    FR_LevelOff,
 }
 
 [Serializable]

@@ -14,7 +14,6 @@ public class InputButton : MonoBehaviour, IInteractable
         animator = GetComponent<Animator>();
     }
 
-
     public void Interact()
     {
         animator.SetTrigger("Click");
