@@ -9,7 +9,7 @@ using System.Linq;
 [CreateAssetMenu(menuName = "ScriptableObjects/AudioStore")]
 public class AudioStore : ScriptableObject
 {
-    [SerializeField] private AudioField[] audioField;
+    [SerializeField, ArrayElementTitle("audioType")] private AudioField[] audioField;
     
     public AudioClip GetAudioClipByType(AudioType audioType)
     {
@@ -33,6 +33,9 @@ public enum AudioType
     SpaceSound,
     FR_LevelOn,
     FR_LevelOff,
+    Computer_Working,
+    MouseClick,
+    MouseDoubleClick
 }
 
 [Serializable]

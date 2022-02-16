@@ -98,6 +98,7 @@
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\WUR_Input.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
+    <Compile Include="Assets\Scripts\FirstRoom\Table_Enter.cs" />
     <Compile Include="Assets\Breakable Windows\Scripts\BreakableWindow.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
@@ -118,7 +119,9 @@
     <Compile Include="Assets\Modern Doors Pack\Scripts\Key.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Scripts\CanvasPlayerManager.cs" />
-    <Compile Include="Assets\Scripts\FirstRoom\Table_Enter.cs" />
+    <Compile Include="Assets\Scripts\FirstRoom\DispalyManager.cs" />
+    <Compile Include="Assets\Scripts\TitleDrawer\ArrayElementTitleAttribute.cs" />
+    <Compile Include="Assets\Scripts\FirstRoom\TaskFR.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

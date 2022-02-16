@@ -35,10 +35,7 @@ public class FirstRoomInput : MonoBehaviour
 
     void Start()
     {
-        print("correctPassword.Length - " + correctPassword.Length);
         inputPassword = new bool[50];
-        print("inputPassword.Length - " + inputPassword.Length);
-        print("CheckPassword - " + CheckPassword());
     }
     public void OnClickButton(string nameButton)
     {
@@ -61,7 +58,6 @@ public class FirstRoomInput : MonoBehaviour
 
     private bool CheckPassword()
     {
-        //print("correctPassword.SequenceEqual(inputPassword) - " + correctPassword.SequenceEqual(inputPassword));   
         return correctPassword.SequenceEqual(inputPassword);
     }
 

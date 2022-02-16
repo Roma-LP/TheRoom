@@ -8,11 +8,11 @@ public class RayCastLogic : MonoBehaviour
     [SerializeField] private Camera playerCamera;
     [SerializeField] private CinemachineVirtualCamera playerCamera2;
     [SerializeField] private float distanceRay;
+    [SerializeField] private LayerMask layerMask;
     private Ray ray;
     private bool isRayOn;
     private RaycastHit hit;
     private float currentDistanceRay;
-    private LayerMask layerMask;
 
     private void Start()
     {
@@ -53,9 +53,8 @@ public class RayCastLogic : MonoBehaviour
             currentDistanceRay = distanceRay;
         }
     }
-    public void RayOn(string layerMask)
+    public void RayOn()
     {
-        this.layerMask = LayerMask.GetMask(layerMask);
         isRayOn = true;
     }
 

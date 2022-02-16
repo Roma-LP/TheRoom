@@ -34,7 +34,7 @@ public class FirstPersonController : MonoBehaviour
 
     public float fov = 60f;
     public bool invertCamera = false;
-    public bool cameraCanMove = true;
+    public bool cameraCanMove = true;                                   // <------------    cameraCanMove
     public float mouseSensitivity = 2f;
     public float maxLookAngle = 50f;
 
@@ -65,7 +65,7 @@ public class FirstPersonController : MonoBehaviour
 
     #region Movement Variables
 
-    public bool playerCanMove = true;
+    public bool playerCanMove = true;                                   // <------------    playerCanMove
     public float walkSpeed = 5f;
     public float maxVelocityChange = 10f;
 
@@ -584,6 +584,21 @@ public class FirstPersonController : MonoBehaviour
             joint.localPosition = new Vector3(Mathf.Lerp(joint.localPosition.x, jointOriginalPos.x, Time.deltaTime * bobSpeed), Mathf.Lerp(joint.localPosition.y, jointOriginalPos.y, Time.deltaTime * bobSpeed), Mathf.Lerp(joint.localPosition.z, jointOriginalPos.z, Time.deltaTime * bobSpeed));
         }
     }
+
+    public void TurnOnController()
+    {
+        playerCanMove = true;
+        cameraCanMove = true;
+    }
+    public void TurnOffController()
+    {
+        playerCanMove = false;
+        cameraCanMove = false;
+        isWalking = false;
+        isSprinting = false;
+        isGrounded = false;
+    }
+
 }
 
 
