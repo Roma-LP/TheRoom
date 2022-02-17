@@ -8,36 +8,40 @@ using Cinemachine;
 using System.Linq;
 
 [RequireComponent(typeof(AudioSource))]
-public class DispalyManager : MonoBehaviour , IInteractable
+public class DispalyManager : MonoBehaviour, IInteractable
 {
     [SerializeField] private UnityEvent OnEnterDisplay;
     [SerializeField] private UnityEvent OnExitDisplay;
-    [SerializeField] static private UnityEvent OnOpenedDoor;
+    [SerializeField] private UnityEvent OnOpenedDoor;
     [SerializeField] private Canvas displayCanvas;
     [SerializeField] private CinemachineVirtualCamera virtualCamera;
     [SerializeField] private AudioStore audioStore;
 
     private AudioSource audioSource;
 
-    private static byte[] password = { 9, 4, 3, 8 }; // A , C , F , I
-    private static byte[] currentInput = new byte[4];
+    private byte[] password = { 9, 4, 3, 8 }; // A , C , F , I
+    private byte[] currentInput = new byte[4];
 
-    //private static event Action<string, byte> OnClickPassword;
+    public static event Action<PasswordLetter, byte> OnClickPassword;
 
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
         LevelInteract.OnTurnLevel += DisplayMod;
+        OnClickPassword += CheckPassword;
     }
 
-    //private static void TriggerOnClickPassword(string name, byte value)
-    //{
-    //    OnClickPassword.Invoke(name, value);
-    //}
+    public static void TriggerOnClickPassword(PasswordLetter letter, byte value)
+    {
+        OnClickPassword.Invoke(letter, value);
+    }
     public void Interact()
     {
-        virtualCamera.enabled = true;
-        OnEnterDisplay?.Invoke();
+        if (displayCanvas.enabled == true)
+        {
+            virtualCamera.enabled = true;
+            OnEnterDisplay?.Invoke();
+        }
     }
 
     public void ExitDispaly()
@@ -48,7 +52,7 @@ public class DispalyManager : MonoBehaviour , IInteractable
 
     public void DisplayMod(bool mod)
     {
-        switch(mod)
+        switch (mod)
         {
             case true:
                 displayCanvas.enabled = true;
@@ -57,7 +61,7 @@ public class DispalyManager : MonoBehaviour , IInteractable
                 audioSource.Play();
                 break;
             case false:
-                displayCanvas.enabled= false;
+                displayCanvas.enabled = false;
                 audioSource.Stop();
                 break;
         }
@@ -71,8 +75,12 @@ public class DispalyManager : MonoBehaviour , IInteractable
     {
         audioSource.PlayOneShot(audioStore.GetAudioClipByType(AudioType.MouseDoubleClick));
     }
+    public void PlayKeySound()
+    {
+        audioSource.PlayOneShot(audioStore.GetAudioClipByType(AudioType.KeySound));
+    }
 
-    public static void CheckPassword(PasswordLetter lette, byte value)
+    private void CheckPassword(PasswordLetter lette, byte value)
     { // A , C , F , I
         switch (lette)
         {
@@ -90,8 +98,9 @@ public class DispalyManager : MonoBehaviour , IInteractable
                 break;
         }
 
-        if(currentInput.SequenceEqual(password))
+        if (currentInput.SequenceEqual(password))
         {
+            audioSource.PlayOneShot(audioStore.GetAudioClipByType(AudioType.CorrectPassword));
             OnOpenedDoor?.Invoke();
             print("correct!");
         }
@@ -100,6 +109,7 @@ public class DispalyManager : MonoBehaviour , IInteractable
     private void OnDestroy()
     {
         LevelInteract.OnTurnLevel -= DisplayMod;
+        OnClickPassword -= CheckPassword;
     }
 
     IEnumerator WaitTwoSec()
@@ -112,5 +122,5 @@ public class DispalyManager : MonoBehaviour , IInteractable
 
 public enum PasswordLetter
 {
-    A,F,C,I
+    A, F, C, I
 }

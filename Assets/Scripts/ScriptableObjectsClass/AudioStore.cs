@@ -5,7 +5,6 @@ using System;
 using System.Linq;
 
 
-//[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/AudioStore", order = 1)]
 [CreateAssetMenu(menuName = "ScriptableObjects/AudioStore")]
 public class AudioStore : ScriptableObject
 {
@@ -35,7 +34,11 @@ public enum AudioType
     FR_LevelOff,
     Computer_Working,
     MouseClick,
-    MouseDoubleClick
+    MouseDoubleClick,
+    KeySound,
+    BoardOpen,
+    BoardClose,
+    BoardTryOpen,
 }
 
 [Serializable]

@@ -22,7 +22,7 @@ public class TaskFR : MonoBehaviour
             INTcount++;
             STRcount.text = INTcount.ToString();
         }
-        DispalyManager.CheckPassword(passwordLetter, INTcount);
+        DispalyManager.TriggerOnClickPassword(passwordLetter, INTcount);
     }
     public void Decrement()
     {
@@ -37,6 +37,6 @@ public class TaskFR : MonoBehaviour
             INTcount--;
             STRcount.text = INTcount.ToString();
         }
-        DispalyManager.CheckPassword(passwordLetter, INTcount);
+        DispalyManager.TriggerOnClickPassword(passwordLetter, INTcount);
     }
 }

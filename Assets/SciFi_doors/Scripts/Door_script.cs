@@ -9,7 +9,6 @@ public class Door_script : MonoBehaviour
     [SerializeField] bool isDoorOpen = true;
 
     private AudioSource audioSource;
-
     private bool isLockOn = true;
 
     void Start()

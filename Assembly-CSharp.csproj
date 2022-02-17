@@ -62,10 +62,12 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\FurnishedCabin\Scripts\MoveableObject.cs" />
+    <Compile Include="Assets\Scripts\FirstRoom\DispalyManager.cs" />
+    <Compile Include="Assets\Scripts\FirstRoom\DeskSonds.cs" />
     <Compile Include="Assets\Starfield Skybox\Demo\Script\LookCamera.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
-    <Compile Include="Assets\Scripts\AudioStore.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjectsClass\AudioStore.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\Apartment_Door\Scripts\KeyController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
@@ -73,6 +75,7 @@
     <Compile Include="Assets\Modern Doors Pack\Scripts\DoubleAutoDoor.cs" />
     <Compile Include="Assets\ModularFirstPersonController\FirstPersonController\FirstPersonController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\TitleDrawer\ArrayElementTitleAttribute.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\Scripts\WakeUpPanel.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
@@ -88,8 +91,9 @@
     <Compile Include="Assets\Apartment_Door\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Modern Doors Pack\Scripts\TrapDoor.cs" />
     <Compile Include="Assets\Modern Doors Pack\Scripts\AutoDoor.cs" />
-    <Compile Include="Assets\Scripts\RayCastLogic.cs" />
+    <Compile Include="Assets\Scripts\Player\RayCastLogic.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
+    <Compile Include="Assets\Scripts\FirstRoom\TaskFR.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\Scripts\WakeUpRoom\InputButton.cs" />
     <Compile Include="Assets\Scripts\FirstRoomInput.cs" />
@@ -102,6 +106,7 @@
     <Compile Include="Assets\Breakable Windows\Scripts\BreakableWindow.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
+    <Compile Include="Assets\Scripts\FirstRoom\BoardAnimManager.cs" />
     <Compile Include="Assets\Apartment_Door\Scripts\DoorController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\Modern Doors Pack\Scripts\BasicDoor.cs" />
@@ -119,9 +124,14 @@
     <Compile Include="Assets\Modern Doors Pack\Scripts\Key.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Scripts\CanvasPlayerManager.cs" />
-    <Compile Include="Assets\Scripts\FirstRoom\DispalyManager.cs" />
-    <Compile Include="Assets\Scripts\TitleDrawer\ArrayElementTitleAttribute.cs" />
-    <Compile Include="Assets\Scripts\FirstRoom\TaskFR.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjectsClass\ImageStore.cs" />
+    <Compile Include="Assets\Scripts\Player\MyInventory.cs" />
+    <Compile Include="Assets\Scripts\GlobalEventManager.cs" />
+    <Compile Include="Assets\Scripts\Player\ItemPickable.cs" />
+    <Compile Include="Assets\Scripts\Player\CanvasInventory.cs" />
+    <Compile Include="Assets\Scripts\DoorWithKeys.cs" />
+    <Compile Include="Assets\Scripts\Player\CanvasWhatNeed.cs" />
+    <Compile Include="Assets\TV.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
