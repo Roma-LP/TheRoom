@@ -387,6 +387,7 @@
 "Assets/Scripts/MouseLook.cs"
 "Assets/Scripts/Player/CanvasInventory.cs"
 "Assets/Scripts/Player/CanvasWhatNeed.cs"
+"Assets/Scripts/Player/InventoryItem.cs"
 "Assets/Scripts/Player/ItemPickable.cs"
 "Assets/Scripts/Player/MyInventory.cs"
 "Assets/Scripts/Player/RayCastLogic.cs"
@@ -394,6 +395,7 @@
 "Assets/Scripts/RightButtonClickUI.cs"
 "Assets/Scripts/ScriptableObjectsClass/AudioStore.cs"
 "Assets/Scripts/ScriptableObjectsClass/ImageStore.cs"
+"Assets/Scripts/SecondRoom/TV.cs"
 "Assets/Scripts/TitleDrawer/ArrayElementTitleAttribute.cs"
 "Assets/Scripts/WakeUpPanel.cs"
 "Assets/Scripts/WakeUpRoom/InputButton.cs"
@@ -433,7 +435,6 @@
 "Assets/TextMesh Pro/Examples & Extras/Scripts/VertexShakeB.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/VertexZoom.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/WarpTextExample.cs"
-"Assets/TV.cs"
 -langversion:9.0
 
 /deterministic

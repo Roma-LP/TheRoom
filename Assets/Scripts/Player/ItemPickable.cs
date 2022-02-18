@@ -12,6 +12,4 @@ public class ItemPickable : MonoBehaviour , IInteractable
         GlobalEventManager.TriggerOnItemPick(itemType);
         Destroy(gameObject);
     }
-
-   
 }

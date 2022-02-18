@@ -22,6 +22,7 @@ public enum ItemType
     Key,
     KeyCard,
     Screwdriver,
+    kek,
 }
 
 [Serializable]

@@ -54,11 +54,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
+    <Compile Include="Assets\Scripts\GlobalEventManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\Modern Doors Pack\Scripts\LockedDoor.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjectsClass\ImageStore.cs" />
     <Compile Include="Assets\Modern Doors Pack\Scripts\Keyring.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
+    <Compile Include="Assets\Scripts\Player\CanvasWhatNeed.cs" />
+    <Compile Include="Assets\Scripts\Player\CanvasInventory.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\FurnishedCabin\Scripts\MoveableObject.cs" />
@@ -86,7 +90,9 @@
     <Compile Include="Assets\Scripts\RightButtonClickUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
+    <Compile Include="Assets\Scripts\SecondRoom\TV.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
+    <Compile Include="Assets\Scripts\Player\MyInventory.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\Apartment_Door\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Modern Doors Pack\Scripts\TrapDoor.cs" />
@@ -110,6 +116,7 @@
     <Compile Include="Assets\Apartment_Door\Scripts\DoorController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\Modern Doors Pack\Scripts\BasicDoor.cs" />
+    <Compile Include="Assets\Scripts\Player\ItemPickable.cs" />
     <Compile Include="Assets\Scripts\Daytime.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
@@ -122,16 +129,10 @@
     <Compile Include="Assets\FurnishedCabin\Scripts\MoveObjectController.cs" />
     <Compile Include="Assets\Scripts\FirstRoom\PC_Switcher.cs" />
     <Compile Include="Assets\Modern Doors Pack\Scripts\Key.cs" />
+    <Compile Include="Assets\Scripts\DoorWithKeys.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Scripts\CanvasPlayerManager.cs" />
-    <Compile Include="Assets\Scripts\ScriptableObjectsClass\ImageStore.cs" />
-    <Compile Include="Assets\Scripts\Player\MyInventory.cs" />
-    <Compile Include="Assets\Scripts\GlobalEventManager.cs" />
-    <Compile Include="Assets\Scripts\Player\ItemPickable.cs" />
-    <Compile Include="Assets\Scripts\Player\CanvasInventory.cs" />
-    <Compile Include="Assets\Scripts\DoorWithKeys.cs" />
-    <Compile Include="Assets\Scripts\Player\CanvasWhatNeed.cs" />
-    <Compile Include="Assets\TV.cs" />
+    <Compile Include="Assets\Scripts\Player\InventoryItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

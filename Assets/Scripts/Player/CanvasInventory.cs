@@ -6,9 +6,10 @@ using UnityEngine.UI;
 
 public class CanvasInventory : MonoBehaviour
 {
-    [SerializeField] private GameObject prefabCell;
+    [SerializeField] private InventoryItem cellPrefab;
     [SerializeField] private ImageStore imageStore;
     [SerializeField] private GameObject panel;
+
 
     private void Awake()
     {
@@ -17,24 +18,13 @@ public class CanvasInventory : MonoBehaviour
 
     private void WhatNeedToShow(ItemType itemType)
     {
-        switch (itemType)
-        {
-            case ItemType.Key:
-                prefabCell.GetComponentsInChildren<Image>().First(x => x.name == "ItemImage").sprite = imageStore.GetSpriteByItemType(ItemType.Key);
-                break;
-            case ItemType.KeyCard:
-                prefabCell.GetComponentsInChildren<Image>().First(x => x.name == "ItemImage").sprite = imageStore.GetSpriteByItemType(ItemType.KeyCard);
-                break;
-            case ItemType.Screwdriver:
-                prefabCell.GetComponentsInChildren<Image>().First(x => x.name == "ItemImage").sprite = imageStore.GetSpriteByItemType(ItemType.Screwdriver);
-                break;
-        }
-        Instantiate(prefabCell, panel.transform);
+        InventoryItem inventoryItem = Instantiate(cellPrefab, panel.transform);
+        inventoryItem.SetItemType(itemType);
     }
 
 
     private void OnDestroy()
     {
-        GlobalEventManager.OnItemPick += WhatNeedToShow;
+        GlobalEventManager.OnItemPick -= WhatNeedToShow;
     }
 }
