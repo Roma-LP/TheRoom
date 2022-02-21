@@ -6,7 +6,6 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Animator))]
 public class BoardAnimManager : MonoBehaviour , IInteractable
 {
-    [SerializeField] private UnityEvent<string> OnClickButton;
     [SerializeField] private bool isOpenAtStart;
     private Animator animator;
     private bool isOpen;

@@ -7,5 +7,4 @@ public class GlobalEventManager : MonoBehaviour
 {
     public static event Action<ItemType> OnItemPick;
     public static void TriggerOnItemPick(ItemType itemType) => OnItemPick?.Invoke(itemType);
-    
 }

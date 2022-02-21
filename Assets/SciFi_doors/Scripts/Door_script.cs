@@ -5,11 +5,17 @@ public class Door_script : MonoBehaviour
 {
     [SerializeField] private AudioStore audioStore;
     [SerializeField] private Animator animator;
-    [SerializeField] private WUR_Input input;
     [SerializeField] bool isDoorOpen = true;
 
+    private KeysNeed keysNeed;
     private AudioSource audioSource;
     private bool isLockOn = true;
+    private bool isKeysNeeds;
+
+    private void Awake()
+    {
+        isKeysNeeds = TryGetComponent<KeysNeed>(out keysNeed);
+    }
 
     void Start()
     {
@@ -33,18 +39,19 @@ public class Door_script : MonoBehaviour
         }
         else
         {
-
-
-            switch (isLockOn)
+            if (isKeysNeeds)
             {
-                case true:
-                    animator.SetTrigger("TryOpen");
-                    audioSource.PlayOneShot(audioStore.GetAudioClipByType(AudioType.TryOpenSlideDoor));
-                    break;
-                case false:
-                    animator.SetTrigger("Open");
-                    audioSource.PlayOneShot(audioStore.GetAudioClipByType(AudioType.OpenSlideDoor));
-                    break;
+                keysNeed.CheckInventory();
+            }
+            if (isLockOn)
+            {
+                animator.SetTrigger("TryOpen");
+                audioSource.PlayOneShot(audioStore.GetAudioClipByType(AudioType.TryOpenSlideDoor));
+            }
+            else
+            {
+                animator.SetTrigger("Open");
+                audioSource.PlayOneShot(audioStore.GetAudioClipByType(AudioType.OpenSlideDoor));
             }
         }
     }
@@ -54,7 +61,7 @@ public class Door_script : MonoBehaviour
         switch (isLockOn)
         {
             case true:
-                
+
                 break;
             case false:
                 animator.SetTrigger("Close");

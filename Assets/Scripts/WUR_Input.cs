@@ -7,15 +7,13 @@ using UnityEngine.Events;
 public class WUR_Input : MonoBehaviour
 {
     [SerializeField] private AudioStore audioStore;
+    [SerializeField] private UnityEvent OnOpenedDoor;
 
     private string password = "2314";
     private StringBuilder currentInput;
 
     private AudioSource audioSource;
 
-    public UnityEvent OnOpenedDoor;
-    public UnityEvent OnPlayerEnter;
-    public UnityEvent OnPlayerExit;
 
     private void Awake()
     {
@@ -31,14 +29,6 @@ public class WUR_Input : MonoBehaviour
         blue    = 3,
         orange  = 4,
         purple  = 5,
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        OnPlayerEnter?.Invoke();
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        OnPlayerExit?.Invoke();
     }
     public void ClickButton(string hit)
     {

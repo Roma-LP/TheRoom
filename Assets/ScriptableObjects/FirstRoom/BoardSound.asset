@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6afa1c45c999cdf439f38283c54ef2a0, type: 3}
+  m_Name: BoardSound
+  m_EditorClassIdentifier: 
+  audioField:
+  - audioType: 18
+    audioClip: {fileID: 8300000, guid: 2cd1dc84de5101a4c83efc44bd0338ca, type: 3}
+  - audioType: 19
+    audioClip: {fileID: 8300000, guid: 19d8356c9024cfb4ea9f311de4bf91c4, type: 3}
+  - audioType: 20
+    audioClip: {fileID: 8300000, guid: ec44df11dfd759f45a93210891c2c9e8, type: 3}

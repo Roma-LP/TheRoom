@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
+using Cinemachine;
 using System;
+using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
-using Cinemachine;
-using System.Linq;
 
 [RequireComponent(typeof(AudioSource))]
 public class DispalyManager : MonoBehaviour, IInteractable
@@ -51,20 +49,19 @@ public class DispalyManager : MonoBehaviour, IInteractable
         StartCoroutine(WaitTwoSec());
     }
 
-    public void DisplayMod(bool mod)
+    public void DisplayMod(bool isLevelOn)
     {
-        switch (mod)
+        if (isLevelOn)
         {
-            case true:
-                displayCanvas.enabled = true;
-                audioSource.clip = audioStore.GetAudioClipByType(AudioType.Computer_Working);
-                audioSource.loop = true;
-                audioSource.Play();
-                break;
-            case false:
-                displayCanvas.enabled = false;
-                audioSource.Stop();
-                break;
+            displayCanvas.enabled = true;
+            audioSource.clip = audioStore.GetAudioClipByType(AudioType.Computer_Working);
+            audioSource.PlayOneShot(audioStore.GetAudioClipByType(AudioType.FR_LevelOn));
+            audioSource.loop = true;
+            audioSource.Play();
+        }
+        else
+        {
+            StartCoroutine(WaitWhileAudioPlay());
         }
     }
 
@@ -116,8 +113,15 @@ public class DispalyManager : MonoBehaviour, IInteractable
     IEnumerator WaitTwoSec()
     {
         yield return new WaitForSeconds(2f);
-        print("");
         OnExitDisplay?.Invoke();
+    }
+
+    IEnumerator WaitWhileAudioPlay()
+    {
+        audioSource.PlayOneShot(audioStore.GetAudioClipByType(AudioType.FR_LevelOff));
+        yield return new WaitForSeconds(audioStore.GetAudioClipByType(AudioType.FR_LevelOff).length);
+        displayCanvas.enabled = false;
+        audioSource.Stop();
     }
 }
 

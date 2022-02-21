@@ -13,10 +13,12 @@ public class RayCastLogic : MonoBehaviour
     private bool isRayOn;
     private RaycastHit hit;
     private float currentDistanceRay;
+    private int[] x = new int[4];
 
     private void Start()
     {
         currentDistanceRay = distanceRay;
+        isRayOn = true;
     }
     private void Update()
     {

@@ -39,6 +39,9 @@ public enum AudioType
     BoardOpen,
     BoardClose,
     BoardTryOpen,
+    SafeBT_Click,
+    SafeHandleOn,
+    SafeOpen,
 }
 
 [Serializable]

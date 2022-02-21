@@ -6,7 +6,6 @@ public class ItemPickable : MonoBehaviour , IInteractable
 {
     [SerializeField] private ItemType itemType;
 
-
     public void Interact()
     {
         GlobalEventManager.TriggerOnItemPick(itemType);
