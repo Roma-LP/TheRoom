@@ -99,6 +99,7 @@
     <Compile Include="Assets\Apartment_Door\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Modern Doors Pack\Scripts\TrapDoor.cs" />
     <Compile Include="Assets\Modern Doors Pack\Scripts\AutoDoor.cs" />
+    <Compile Include="Assets\Scripts\TV_Stand\DoorRight.cs" />
     <Compile Include="Assets\Scripts\Player\RayCastLogic.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\Scripts\FirstRoom\TaskFR.cs" />
@@ -123,19 +124,19 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\Scripts\LevelInteract.cs" />
+    <Compile Include="Assets\Scripts\TV_Stand\DoorLeft.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
     <Compile Include="Assets\Scripts\Interface\IInteractable.cs" />
     <Compile Include="Assets\SciFi_doors\Scripts\Door_script.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
+    <Compile Include="Assets\Scripts\FirstRoom\ServerAnim.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\FurnishedCabin\Scripts\MoveObjectController.cs" />
     <Compile Include="Assets\Scripts\FirstRoom\PC_Switcher.cs" />
     <Compile Include="Assets\Modern Doors Pack\Scripts\Key.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Scripts\CanvasPlayerManager.cs" />
-    <Compile Include="Assets\Scripts\FirstRoom\ServerAnim.cs" />
-    <Compile Include="Assets\Scripts\TV_Stand\DoorLeft.cs" />
-    <Compile Include="Assets\Scripts\TV_Stand\DoorRight.cs" />
+    <Compile Include="Assets\Scripts\Doors\ExitDoor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

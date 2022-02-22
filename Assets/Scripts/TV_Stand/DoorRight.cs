@@ -6,17 +6,17 @@ public class DoorRight : MonoBehaviour, IInteractable
 {
     [SerializeField] private Animator animator;
 
-    private bool isOpen;
+    private bool isOpen = false;
     public void Interact()
     {
         if (isOpen)
         {
-            animator.SetTrigger("CloseRight");
+            animator.Play("CloseRight");
             isOpen = false;
         }
         else
         {
-            animator.SetTrigger("OpenRight");
+            animator.Play("OpenRight");
             isOpen = true;
         }
     }

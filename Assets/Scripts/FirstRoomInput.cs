@@ -9,7 +9,6 @@ using TMPro;
 
 public class FirstRoomInput : MonoBehaviour
 {
-    private bool isLockOn = true;
     public UnityEvent OnPlayerEnter;
     public UnityEvent OnPlayerExit;
     public UnityEvent OnOpenedDoor;

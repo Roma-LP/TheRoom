@@ -373,6 +373,7 @@
 "Assets/SciFi_doors/Scripts/Door_script.cs"
 "Assets/Scripts/CanvasPlayerManager.cs"
 "Assets/Scripts/Daytime.cs"
+"Assets/Scripts/Doors/ExitDoor.cs"
 "Assets/Scripts/FirstRoom/BoardAnimManager.cs"
 "Assets/Scripts/FirstRoom/DeskSonds.cs"
 "Assets/Scripts/FirstRoom/DispalyManager.cs"

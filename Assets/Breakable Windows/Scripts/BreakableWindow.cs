@@ -4,17 +4,29 @@ using UnityEngine;
 
 [AddComponentMenu("Breakable Windows/Breakable Window")]
 [RequireComponent(typeof(AudioSource))]
-public class BreakableWindow : MonoBehaviour {
+public class BreakableWindow : MonoBehaviour, IInteractable
+{
+    [SerializeField] private TypeWindow typeWindow;
+
+    private bool isKeysNeeds;
+    private bool isCoroutineWorking;
+    private KeysNeed keysNeed;
+
+    private void Awake()
+    {
+        isKeysNeeds = TryGetComponent<KeysNeed>(out keysNeed);
+        GlobalEventManager.OnItemPick += DestroyWindowsInThirdRoom;
+    }
+
 
     [Tooltip("Layer for Splinters should be Ground for steps sound.")]
     public LayerMask layerSplinters;
-    public AudioSource spaceAudioSorce;
     public AudioStore audioStore;
     [Space]
 
     [Tooltip("Layer should be TransparentFX or your own layer for breakable windows.")]
     public LayerMask layer;
-    [Range(2,25)]
+    [Range(2, 25)]
     public int partsX = 5;
     [Range(2, 25)]
     public int partsY = 5;
@@ -47,7 +59,7 @@ public class BreakableWindow : MonoBehaviour {
     public List<GameObject> splinters;
     private Vector3[] vertices;
     private Vector3[] normals;
-    
+
     private bool allreadyCalculated = false;
     private GameObject splinterParent;
     int[] tris;
@@ -63,17 +75,13 @@ public class BreakableWindow : MonoBehaviour {
 
         if (transform.rotation.eulerAngles.x != 0 || transform.rotation.eulerAngles.z != 0)
             Debug.LogWarning("Warning: Window must not be rotated around x and z!");
-
-        spaceAudioSorce.clip = audioStore.GetAudioClipByType(AudioType.SpaceSound);
-        spaceAudioSorce.loop = true;
-        spaceAudioSorce.Play();
     }
 
     private void bakeVertices(bool trianglesToo = false)
     {
         vertices = new Vector3[(partsX + 1) * (partsY + 1)];
         normals = new Vector3[(partsX + 1) * (partsY + 1)];
-        
+
 
         for (int y = 0; y < partsY + 1; y++)
         {
@@ -159,12 +167,12 @@ public class BreakableWindow : MonoBehaviour {
 
         MeshFilter mf = obj.AddComponent<MeshFilter>();
         mf.mesh = m;
-        
+
         MeshCollider col = obj.AddComponent<MeshCollider>();
         col.inflateMesh = true;
         col.convex = true;
         if (destroyPhysicsTime > 0 && destroyColliderWithPhysics) Destroy(col, destroyPhysicsTime);
-        
+
         Rigidbody rigid = obj.AddComponent<Rigidbody>();
         rigid.centerOfMass = (v[0] + v[1] + v[2]) / 3f;
         if (addTorques && preCalculate == false) rigid.AddTorque(new Vector3(Random.value > 0.5f ? Random.value * 50 : -Random.value * 50, Random.value > 0.5f ? Random.value * 50 : -Random.value * 50, Random.value > 0.5f ? Random.value * 50 : -Random.value * 50));
@@ -234,7 +242,7 @@ public class BreakableWindow : MonoBehaviour {
             Destroy(GetComponent<MeshRenderer>());
             Destroy(GetComponent<MeshFilter>());
 
-            isBroken = true;            
+            isBroken = true;
         }
 
         if (breakingSound != null)
@@ -242,12 +250,39 @@ public class BreakableWindow : MonoBehaviour {
             GetComponent<AudioSource>().clip = breakingSound;
             GetComponent<AudioSource>().Play();
         }
-
-        spaceAudioSorce.transform.localPosition = new Vector3(0, 0, 0);
-
         return splinters.ToArray();
     }
 
+    public void Interact()
+    {
+        if (isKeysNeeds)
+        {
+            if (!isCoroutineWorking)
+                StartCoroutine(CheckInventory());
+            //keysNeed.CheckInventory();
+        }
+    }
+
+    public void BreakWindow()
+    {
+        breakWindow();
+    }
+
+    IEnumerator CheckInventory()
+    {
+        isCoroutineWorking = true;
+        keysNeed.CheckInventory();
+        yield return new WaitForSeconds(3f);
+        isCoroutineWorking = false;
+    }
+
+    private void DestroyWindowsInThirdRoom(ItemType itemType)
+    {
+        if(ItemType.Key == itemType && typeWindow == TypeWindow.ThirdRoom)
+        {
+            BreakWindow();
+        }
+    }
 
     void OnCollisionEnter(Collision col)
     {
@@ -263,6 +298,18 @@ public class BreakableWindow : MonoBehaviour {
                 }
             }
             else breakWindow();
-        }        
+        }
+
     }
+
+    private void OnDestroy()
+    {
+        GlobalEventManager.OnItemPick -= DestroyWindowsInThirdRoom;
+    }
+}
+
+public enum TypeWindow
+{
+    Default,
+    ThirdRoom
 }
