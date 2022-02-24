@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: BoardSound
   m_EditorClassIdentifier: 
   audioField:
-  - audioType: 18
+  - audioType: 5
     audioClip: {fileID: 8300000, guid: 2cd1dc84de5101a4c83efc44bd0338ca, type: 3}
-  - audioType: 19
+  - audioType: 6
     audioClip: {fileID: 8300000, guid: 19d8356c9024cfb4ea9f311de4bf91c4, type: 3}
-  - audioType: 20
+  - audioType: 7
     audioClip: {fileID: 8300000, guid: ec44df11dfd759f45a93210891c2c9e8, type: 3}

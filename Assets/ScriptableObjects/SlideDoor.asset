@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: SlideDoor
   m_EditorClassIdentifier: 
   audioField:
-  - audioType: 5
+  - audioType: 4
     audioClip: {fileID: 8300000, guid: 7f3b2ce83db8d874a87acd9295480107, type: 3}
-  - audioType: 6
+  - audioType: 5
     audioClip: {fileID: 8300000, guid: 2fc4f6cdeb8429f42bb93c7ed9943848, type: 3}
-  - audioType: 7
+  - audioType: 6
     audioClip: {fileID: 8300000, guid: dd90d23ed64c95849a96fd5e7dd56255, type: 3}
-  - audioType: 8
+  - audioType: 7
     audioClip: {fileID: 8300000, guid: 1ca347f6274d6e0449bba06d47f64b4a, type: 3}

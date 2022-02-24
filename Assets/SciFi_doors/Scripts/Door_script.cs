@@ -35,7 +35,7 @@ public class Door_script : MonoBehaviour
         if (isDoorOpen)
         {
             animator.SetTrigger("Open");
-            audioSource.PlayOneShot(audioStore.GetAudioClipByType(AudioType.OpenSlideDoor));
+            audioSource.PlayOneShot(audioStore.GetAudioClipByType(AudioType.Open));
         }
         else
         {
@@ -46,12 +46,12 @@ public class Door_script : MonoBehaviour
             if (isLockOn)
             {
                 animator.SetTrigger("TryOpen");
-                audioSource.PlayOneShot(audioStore.GetAudioClipByType(AudioType.TryOpenSlideDoor));
+                audioSource.PlayOneShot(audioStore.GetAudioClipByType(AudioType.TryOpen));
             }
             else
             {
                 animator.SetTrigger("Open");
-                audioSource.PlayOneShot(audioStore.GetAudioClipByType(AudioType.OpenSlideDoor));
+                audioSource.PlayOneShot(audioStore.GetAudioClipByType(AudioType.Open));
             }
         }
     }
@@ -65,7 +65,7 @@ public class Door_script : MonoBehaviour
                 break;
             case false:
                 animator.SetTrigger("Close");
-                audioSource.PlayOneShot(audioStore.GetAudioClipByType(AudioType.CloseSlideDoor));
+                audioSource.PlayOneShot(audioStore.GetAudioClipByType(AudioType.Close));
                 break;
         }
     }

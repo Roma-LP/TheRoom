@@ -21,7 +21,6 @@ public class BreakableWindow : MonoBehaviour, IInteractable
 
     [Tooltip("Layer for Splinters should be Ground for steps sound.")]
     public LayerMask layerSplinters;
-    public AudioStore audioStore;
     [Space]
 
     [Tooltip("Layer should be TransparentFX or your own layer for breakable windows.")]

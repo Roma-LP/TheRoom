@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Safe
   m_EditorClassIdentifier: 
   audioField:
-  - audioType: 21
+  - audioType: 12
     audioClip: {fileID: 8300000, guid: 6f36e684d1245af4faf209daa773024a, type: 3}
-  - audioType: 22
+  - audioType: 16
     audioClip: {fileID: 8300000, guid: ec27db70885767a41815054252f75d08, type: 3}
-  - audioType: 23
-    audioClip: {fileID: 8300000, guid: e323009cac5f5764383ea2a2c8ab2fb5, type: 3}
   - audioType: 5
+    audioClip: {fileID: 8300000, guid: e323009cac5f5764383ea2a2c8ab2fb5, type: 3}
+  - audioType: 4
     audioClip: {fileID: 8300000, guid: 7f3b2ce83db8d874a87acd9295480107, type: 3}
-  - audioType: 8
+  - audioType: 7
     audioClip: {fileID: 8300000, guid: 1ca347f6274d6e0449bba06d47f64b4a, type: 3}
