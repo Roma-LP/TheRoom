@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\Game\FirstRoom\DispalyManager.cs" />
     <Compile Include="Assets\Scripts\Game\FirstRoom\DeskSonds.cs" />
     <Compile Include="Assets\Starfield Skybox\Demo\Script\LookCamera.cs" />
+    <Compile Include="Assets\Scripts\UI\ButtonsController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\Scripts\Game\ScriptableObjectsClass\AudioStore.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Assets\Modern Doors Pack\Scripts\DoubleAutoDoor.cs" />
     <Compile Include="Assets\TimerAndClocks\Scripts\Serialized\DisplayOptions.cs" />
     <Compile Include="Assets\ModularFirstPersonController\FirstPersonController\FirstPersonController.cs" />
+    <Compile Include="Assets\Scripts\Game\OpenCloseManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\TimerAndClocks\Scripts\Utility\AnalogStopwatch.cs" />
     <Compile Include="Assets\TimerAndClocks\Scripts\Utility\SceneLoader.cs" />
@@ -117,6 +119,7 @@
     <Compile Include="Assets\Scripts\Game\Player\RayCastLogic.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\Scripts\Game\FirstRoom\TaskFR.cs" />
+    <Compile Include="Assets\Scripts\Game\Player\MenuManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\Scripts\Game\WakeUpRoom\InputButton.cs" />
     <Compile Include="Assets\Scripts\Game\FirstRoomInput.cs" />
@@ -138,6 +141,7 @@
     <Compile Include="Assets\TimerAndClocks\Scripts\Enums\TimerTextType.cs" />
     <Compile Include="Assets\Scripts\Game\Player\ItemPickable.cs" />
     <Compile Include="Assets\Scripts\Game\Daytime.cs" />
+    <Compile Include="Assets\Scripts\UI\SaveSound.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\Scripts\Game\LevelInteract.cs" />
@@ -148,16 +152,12 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\Scripts\Game\FirstRoom\ServerAnim.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
+    <Compile Include="Assets\Scripts\Game\EndGameCanvasManager.cs" />
     <Compile Include="Assets\FurnishedCabin\Scripts\MoveObjectController.cs" />
     <Compile Include="Assets\Scripts\Game\FirstRoom\PC_Switcher.cs" />
     <Compile Include="Assets\Modern Doors Pack\Scripts\Key.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Scripts\Game\CanvasPlayerManager.cs" />
-    <Compile Include="Assets\Scripts\Game\OpenCloseManager.cs" />
-    <Compile Include="Assets\Scripts\Game\EndGameCanvasManager.cs" />
-    <Compile Include="Assets\Scripts\Menu\ButtonsController.cs" />
-    <Compile Include="Assets\Scripts\Menu\SaveSound.cs" />
-    <Compile Include="Assets\Scripts\Game\Player\MenuShow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

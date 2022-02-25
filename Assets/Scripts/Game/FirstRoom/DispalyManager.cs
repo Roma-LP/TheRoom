@@ -17,8 +17,8 @@ public class DispalyManager : MonoBehaviour, IInteractable
 
     private AudioSource audioSource;
 
-    //private byte[] password = { 9, 4, 3, 8 }; // A , C , F , I
-    private byte[] password = { 3, 3, 3, 3 };
+    private byte[] password = { 9, 4, 3, 8 }; // A , C , F , I
+    //private byte[] password = { 3, 3, 3, 3 };
     private byte[] currentInput = new byte[4];
 
     public static event Action<PasswordLetter, byte> OnClickPassword;
@@ -36,7 +36,7 @@ public class DispalyManager : MonoBehaviour, IInteractable
     }
     public void Interact()
     {
-        if (displayCanvas.enabled == true)
+        if (displayCanvas.enabled)
         {
             virtualCamera.enabled = true;
             OnEnterDisplay?.Invoke();

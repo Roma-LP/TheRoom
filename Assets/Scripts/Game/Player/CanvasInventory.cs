@@ -22,7 +22,6 @@ public class CanvasInventory : MonoBehaviour
         inventoryItem.SetItemType(itemType);
     }
 
-
     private void OnDestroy()
     {
         GlobalEventManager.OnItemPick -= WhatNeedToShow;

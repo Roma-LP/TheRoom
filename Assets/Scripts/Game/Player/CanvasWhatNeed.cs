@@ -12,6 +12,8 @@ public class CanvasWhatNeed : MonoBehaviour
 
     public void WhatNeedBlinks(ItemType[] itemTypes)
     {
+        StopAllCoroutines();
+        ClearInventory();
         inventory = new InventoryItem[itemTypes.Length];
         for (byte i = 0; i < itemTypes.Length; i++)
         {
@@ -35,6 +37,14 @@ public class CanvasWhatNeed : MonoBehaviour
         HideItems(false);
         yield return new WaitForSeconds(blinksTime);
         HideItems(true);
+        ClearInventory();
+        inventory = null;
+    }
+
+    private void ClearInventory()
+    {
+        if (inventory == null)
+            return;
         foreach (var item in inventory)
             Destroy(item.gameObject);
         inventory = null;

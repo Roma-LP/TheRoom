@@ -10,7 +10,8 @@ public class SafeManager : MonoBehaviour
     [SerializeField] private AudioStore audioStore;
     [SerializeField] private TMP_Text inputText;
 
-    private string password = "1234";
+    //private string password = "1234";
+    private string password = "4839";
     private StringBuilder currentInput;
     private AudioSource audioSource;
     private Animator animator;

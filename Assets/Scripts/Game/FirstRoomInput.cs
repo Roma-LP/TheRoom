@@ -11,7 +11,7 @@ public class FirstRoomInput : MonoBehaviour
 {
     public UnityEvent OnPlayerEnter;
     public UnityEvent OnPlayerExit;
-    public UnityEvent OnOpenedDoor;
+    public UnityEvent OnCorrectPassword;
     [SerializeField] private CinemachineVirtualCamera panelCamera;
 
 
@@ -41,7 +41,7 @@ public class FirstRoomInput : MonoBehaviour
         inputPassword[int.Parse(nameButton) - 1] = !inputPassword[int.Parse(nameButton) - 1];
         if (CheckPassword())
         {
-            OnOpenedDoor?.Invoke();
+            OnCorrectPassword?.Invoke();
             print("correct!");
         }
     }
