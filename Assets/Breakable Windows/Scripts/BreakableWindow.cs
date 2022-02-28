@@ -11,11 +11,15 @@ public class BreakableWindow : MonoBehaviour, IInteractable
     private bool isKeysNeeds;
     private bool isCoroutineWorking;
     private KeysNeed keysNeed;
+    private AudioSource audioSource;
 
     private void Awake()
     {
         isKeysNeeds = TryGetComponent<KeysNeed>(out keysNeed);
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = PlayerPrefs.GetFloat("commonVolume");
         GlobalEventManager.OnItemPick += DestroyWindowsInThirdRoom;
+        GlobalEventManager.OnCommonVolumeChange += SetVolume;
     }
 
 
@@ -208,7 +212,6 @@ public class BreakableWindow : MonoBehaviour, IInteractable
                 generateSingleSplinter(t, splinterParent.transform);
             }
         }
-        print("123");
     }
 
     /// <summary>
@@ -246,8 +249,8 @@ public class BreakableWindow : MonoBehaviour, IInteractable
 
         if (breakingSound != null)
         {
-            GetComponent<AudioSource>().clip = breakingSound;
-            GetComponent<AudioSource>().Play();
+            audioSource.clip = breakingSound;
+            audioSource.Play();
         }
         return splinters.ToArray();
     }
@@ -277,7 +280,7 @@ public class BreakableWindow : MonoBehaviour, IInteractable
 
     private void DestroyWindowsInThirdRoom(ItemType itemType)
     {
-        if(ItemType.Key == itemType && typeWindow == TypeWindow.ThirdRoom)
+        if (ItemType.Key == itemType && typeWindow == TypeWindow.ThirdRoom)
         {
             BreakWindow();
         }
@@ -301,9 +304,12 @@ public class BreakableWindow : MonoBehaviour, IInteractable
 
     }
 
+    private void SetVolume(float volume) => audioSource.volume = volume;
+
     private void OnDestroy()
     {
         GlobalEventManager.OnItemPick -= DestroyWindowsInThirdRoom;
+        GlobalEventManager.OnCommonVolumeChange -= SetVolume;
     }
 }
 

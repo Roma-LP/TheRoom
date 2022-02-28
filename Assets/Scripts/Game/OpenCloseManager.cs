@@ -14,6 +14,8 @@ public class OpenCloseManager : MonoBehaviour , IInteractable
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        audioSource.volume = PlayerPrefs.GetFloat("commonVolume");
+        GlobalEventManager.OnCommonVolumeChange += SetVolume;
     }
     public void Interact()
     {
@@ -29,5 +31,12 @@ public class OpenCloseManager : MonoBehaviour , IInteractable
             animator.SetTrigger("Open");
             isOpen = true;
         }
+    }
+
+    private void SetVolume(float volume) => audioSource.volume = volume;
+
+    private void OnDestroy()
+    {
+        GlobalEventManager.OnCommonVolumeChange -= SetVolume;
     }
 }

@@ -14,6 +14,8 @@ public class DeskSonds : MonoBehaviour
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        audioSource.volume = PlayerPrefs.GetFloat("commonVolume");
+        GlobalEventManager.OnCommonVolumeChange += SetVolume;
         OnPlayClip += PlayClip;
     }
 
@@ -35,8 +37,11 @@ public class DeskSonds : MonoBehaviour
         }
     }
 
+    private void SetVolume(float volume) => audioSource.volume = volume;
+
     private void OnDestroy()
     {
         OnPlayClip -= PlayClip;
+        GlobalEventManager.OnCommonVolumeChange -= SetVolume;
     }
 }

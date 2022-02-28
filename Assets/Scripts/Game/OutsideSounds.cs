@@ -10,6 +10,8 @@ public class OutsideSounds : MonoBehaviour
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        audioSource.volume = PlayerPrefs.GetFloat("commonVolume");
+        GlobalEventManager.OnCommonVolumeChange += SetVolume;
     }
     public void StartSound()
     {
@@ -18,5 +20,12 @@ public class OutsideSounds : MonoBehaviour
             isSoundPlay = true;
             audioSource.Play();
         }
+    }
+
+    private void SetVolume(float volume) => audioSource.volume = volume;
+
+    private void OnDestroy()
+    {
+        GlobalEventManager.OnCommonVolumeChange -= SetVolume;
     }
 }

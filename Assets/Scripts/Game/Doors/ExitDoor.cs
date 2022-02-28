@@ -18,6 +18,8 @@ public class ExitDoor : MonoBehaviour, IInteractable
         isKeysNeeds = TryGetComponent<KeysNeed>(out keysNeed);
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+        audioSource.volume = PlayerPrefs.GetFloat("commonVolume");
+        GlobalEventManager.OnCommonVolumeChange += SetVolume;
     }
 
     public void Interact()
@@ -52,5 +54,12 @@ public class ExitDoor : MonoBehaviour, IInteractable
         keysNeed.CheckInventory();
         yield return new WaitForSeconds(3f);
         isCoroutineWorking = false;
+    }
+
+    private void SetVolume(float volume) => audioSource.volume = volume;
+
+    private void OnDestroy()
+    {
+        GlobalEventManager.OnCommonVolumeChange -= SetVolume;
     }
 }

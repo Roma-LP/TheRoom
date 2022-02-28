@@ -26,8 +26,10 @@ public class DispalyManager : MonoBehaviour, IInteractable
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        audioSource.volume = PlayerPrefs.GetFloat("commonVolume");
         LevelInteract.OnTurnLevel += DisplayMod;
         OnClickPassword += CheckPassword;
+        GlobalEventManager.OnCommonVolumeChange += SetVolume;
     }
 
     public static void TriggerOnClickPassword(PasswordLetter letter, byte value)
@@ -107,6 +109,7 @@ public class DispalyManager : MonoBehaviour, IInteractable
     private void OnDestroy()
     {
         LevelInteract.OnTurnLevel -= DisplayMod;
+        GlobalEventManager.OnCommonVolumeChange -= SetVolume;
         OnClickPassword -= CheckPassword;
     }
 
@@ -123,6 +126,9 @@ public class DispalyManager : MonoBehaviour, IInteractable
         displayCanvas.enabled = false;
         audioSource.Stop();
     }
+
+    private void SetVolume(float volume) => audioSource.volume = volume;
+
 }
 
 public enum PasswordLetter

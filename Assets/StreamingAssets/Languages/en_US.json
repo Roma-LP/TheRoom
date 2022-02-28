@@ -1,0 +1,68 @@
+{
+    "items":[
+        {
+            "key":"MenuStartGame",
+            "value":"Start Game"
+        },
+        {
+            "key":"Settings",
+            "value":"Settings"
+        },
+        {
+            "key":"Quit",
+            "value":"Quit"
+        },
+        {
+            "key":"SettingsCommonVolume",
+            "value":"Common Volume"
+        },
+        {
+            "key":"SettingsEffects",
+            "value":"Effects"
+        },
+        {
+            "key":"SettingsLanguage",
+            "value":"Language"
+        },
+        {
+            "key":"SettingsBack",
+            "value":"Back"
+        },
+        {
+            "key":"WURBlue",
+            "value":"BLUE"
+        },
+        {
+            "key":"WURGreen",
+            "value":"GREEN"
+        },
+        {
+            "key":"WURYellow",
+            "value":"YELLOW"
+        },
+        {
+            "key":"WUROrange",
+            "value":"ORANGE"
+        },
+        {
+            "key":"InteractHint",
+            "value":"Press \"Fire\""
+        },
+        {
+            "key":"Continue",
+            "value":"Continue"
+        },
+        {
+            "key":"BackToMenu",
+            "value":"Back to Menu"
+        },
+        {
+            "key":"EndGame",
+            "value":"End Game"
+        },
+        {
+            "key":"Video",
+            "value":"Exclusive trailer for the upcoming sequel\n(press \"Escape\" to skip)"
+        }
+    ]
+}

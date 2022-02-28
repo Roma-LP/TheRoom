@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>9.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -53,6 +53,9 @@
     <UnityVersion>2021.2.7f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Assets\Scripts\Game\CatNav.cs" />
     <Compile Include="Assets\Scripts\Game\Player\InventoryItem.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
@@ -60,11 +63,13 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\Modern Doors Pack\Scripts\LockedDoor.cs" />
     <Compile Include="Assets\Scripts\Game\ScriptableObjectsClass\ImageStore.cs" />
+    <Compile Include="Assets\Scripts\Language\LocalizationManager.cs" />
     <Compile Include="Assets\Modern Doors Pack\Scripts\Keyring.cs" />
     <Compile Include="Assets\TimerAndClocks\Scripts\Utility\SaveSessionTimer.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TimerAndClocks\Scripts\Enums\TimerState.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
+    <Compile Include="Assets\Scripts\Language\LocalizationData.cs" />
     <Compile Include="Assets\Scripts\Game\GlobalTimeManager.cs" />
     <Compile Include="Assets\Scripts\Game\Player\CanvasWhatNeed.cs" />
     <Compile Include="Assets\Scripts\Game\Player\CanvasInventory.cs" />
@@ -111,7 +116,9 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\Scripts\Game\Player\MyInventory.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
+    <Compile Include="Assets\Scripts\Game\ScriptableObjectsClass\VideoStore.cs" />
     <Compile Include="Assets\Apartment_Door\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Language\LocalizedText.cs" />
     <Compile Include="Assets\Modern Doors Pack\Scripts\TrapDoor.cs" />
     <Compile Include="Assets\TimerAndClocks\Scripts\Utility\DestroyObjects.cs" />
     <Compile Include="Assets\Modern Doors Pack\Scripts\AutoDoor.cs" />

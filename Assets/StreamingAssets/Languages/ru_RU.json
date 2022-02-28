@@ -1,0 +1,68 @@
+{
+    "items":[
+        {
+            "key":"MenuStartGame",
+            "value":"Начать игру"
+        },
+        {
+            "key":"Settings",
+            "value":"Настройки"
+        },
+        {
+            "key":"Quit",
+            "value":"Выйти"
+        },
+        {
+            "key":"SettingsCommonVolume",
+            "value":"Общая громкость"
+        },
+        {
+            "key":"SettingsEffects",
+            "value":"Эффекты"
+        },
+        {
+            "key":"SettingsLanguage",
+            "value":"Язык"
+        },
+        {
+            "key":"SettingsBack",
+            "value":"Назад"
+        },
+        {
+            "key":"WURBlue",
+            "value":"СИНИЙ"
+        },
+        {
+            "key":"WURGreen",
+            "value":"ЗЕЛЕНЫЙ"
+        },
+        {
+            "key":"WURYellow",
+            "value":"ЖЕЛТЫЙ"
+        },
+        {
+            "key":"WUROrange",
+            "value":"ОРАНЖЕВЫЙ"
+        },
+        {
+            "key":"InteractHint",
+            "value":"Нажми \"Огонь\""
+        },
+        {
+            "key":"Continue",
+            "value":"Продолжить"
+        },
+        {
+            "key":"BackToMenu",
+            "value":"Назад в меню"
+        },
+        {
+            "key":"EndGame",
+            "value":"Конец игры"
+        },
+        {
+            "key":"Video",
+            "value":"Эксклюзивный трейлер будущего сиквела\n(нажми \"Escape\" чтобы пропустить)"
+        }
+    ]
+}

@@ -10,7 +10,6 @@ public class SafeManager : MonoBehaviour
     [SerializeField] private AudioStore audioStore;
     [SerializeField] private TMP_Text inputText;
 
-    //private string password = "1234";
     private string password = "4839";
     private StringBuilder currentInput;
     private AudioSource audioSource;
@@ -18,6 +17,8 @@ public class SafeManager : MonoBehaviour
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        audioSource.volume = PlayerPrefs.GetFloat("commonVolume");
+        GlobalEventManager.OnCommonVolumeChange += SetVolume;
         animator = GetComponent<Animator>();
         currentInput = new StringBuilder(4);
     }
@@ -72,4 +73,12 @@ public class SafeManager : MonoBehaviour
         audioSource.PlayOneShot(audioStore.GetAudioClipByType(AudioType.Open));
         gameObject.layer = LayerMask.NameToLayer("Default");
     }
+
+    private void SetVolume(float volume) => audioSource.volume = volume;
+
+    private void OnDestroy()
+    {
+        GlobalEventManager.OnCommonVolumeChange -= SetVolume;
+    }
+
 }

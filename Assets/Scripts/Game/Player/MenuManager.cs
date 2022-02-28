@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 
 public class MenuManager : MonoBehaviour
@@ -10,15 +11,23 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private UnityEvent onMenuHide;  
 
     private bool isMenuShowing;
+    private bool isMenuCanOpen=true;
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.BackQuote))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(isMenuShowing)
-                MenuHide();
+            if (isMenuCanOpen)
+            {
+                if (isMenuShowing)
+                    MenuHide();
+                else
+                    MenuShow();
+            }
             else
-                MenuShow();
+            {
+                SceneManager.LoadScene("Menu");
+            }
         }
     }
 
@@ -36,4 +45,7 @@ public class MenuManager : MonoBehaviour
         Time.timeScale = 0f;
         onMenuShow?.Invoke();
     }
+
+    public void OffMenuWork() => isMenuCanOpen = false;
+
 }

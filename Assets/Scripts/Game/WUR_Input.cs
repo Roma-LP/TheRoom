@@ -18,7 +18,9 @@ public class WUR_Input : MonoBehaviour
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        audioSource.volume = PlayerPrefs.GetFloat("commonVolume");
         currentInput = new StringBuilder("0000");
+        GlobalEventManager.OnCommonVolumeChange += SetVolume;
     }
 
     public enum ColorOfButton
@@ -98,4 +100,12 @@ public class WUR_Input : MonoBehaviour
         currentInput.Append(number);
         currentInput.Remove(0, 1);  // remove first number to save 4-signs password
     }
+
+    private void SetVolume(float volume) => audioSource.volume = volume;
+
+    private void OnDestroy()
+    {
+        GlobalEventManager.OnCommonVolumeChange -= SetVolume;
+    }
+
 }

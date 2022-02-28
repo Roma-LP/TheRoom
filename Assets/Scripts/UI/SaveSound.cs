@@ -11,18 +11,21 @@ public class SaveSound : MonoBehaviour
 
     private void Start()
     {
-        commonVolume.onValueChanged.AddListener(delegate { ValueChangeCheckMusicVolume(); });
+        commonVolume.value = PlayerPrefs.GetFloat("commonVolume");
+        effectVolume.value = PlayerPrefs.GetFloat("effectVolume");
+        commonVolume.onValueChanged.AddListener(delegate { ValueChangeCheckCommonVolume(); });
         effectVolume.onValueChanged.AddListener(delegate { ValueChangeCheckEffectVolume(); });
     }
 
-    private void ValueChangeCheckMusicVolume()
+    private void ValueChangeCheckCommonVolume()
     {
         PlayerPrefs.SetFloat("commonVolume", commonVolume.value);
-        Debug.Log(commonVolume.value);
+        GlobalEventManager.TriggerOnCommonVolumeChange(commonVolume.value);
+        print(commonVolume.value);
     }
     private void ValueChangeCheckEffectVolume()
     {
         PlayerPrefs.SetFloat("effectVolume", effectVolume.value);
-        Debug.Log(effectVolume.value);
+        print(effectVolume.value);
     }
 }

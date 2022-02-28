@@ -9,10 +9,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using Cinemachine;
 
 #if UNITY_EDITOR
 using UnityEditor;
-using Cinemachine;
 using System.Net;
 #endif
 
@@ -143,6 +143,8 @@ public class FirstPersonController : MonoBehaviour
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        audioSource.volume = PlayerPrefs.GetFloat("commonVolume");
+        GlobalEventManager.OnCommonVolumeChange += SetVolume;
         rb = GetComponent<Rigidbody>();
 
         crosshairObject = GetComponentInChildren<Image>();
@@ -157,6 +159,8 @@ public class FirstPersonController : MonoBehaviour
             sprintRemaining = sprintDuration;
             sprintCooldownReset = sprintCooldown;
         }
+
+        Time.timeScale = 1f;
     }
 
     void Start()
@@ -599,6 +603,12 @@ public class FirstPersonController : MonoBehaviour
         isGrounded = false;
     }
 
+    private void SetVolume(float volume) => audioSource.volume = volume;
+
+    private void OnDestroy()
+    {
+        GlobalEventManager.OnCommonVolumeChange -= SetVolume;
+    }
 }
 
 

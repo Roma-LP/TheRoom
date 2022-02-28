@@ -8,6 +8,7 @@ TagManager:
   - Floor
   - WUR_0
   - Window
+  - LocalizationManager
   layers:
   - Default
   - TransparentFX

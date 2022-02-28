@@ -15,11 +15,13 @@ public class Door_script : MonoBehaviour
     private void Awake()
     {
         isKeysNeeds = TryGetComponent<KeysNeed>(out keysNeed);
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = PlayerPrefs.GetFloat("commonVolume");
+        GlobalEventManager.OnCommonVolumeChange += SetVolume;
     }
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         if (animator == null)
         {
             animator = GetComponent<Animator>();
@@ -69,9 +71,17 @@ public class Door_script : MonoBehaviour
                 break;
         }
     }
+
+    private void SetVolume(float volume) => audioSource.volume = volume;
+
     public void Open()
     {
         audioSource.PlayOneShot(audioStore.GetAudioClipByType(AudioType.CorrectPassword));
         isLockOn = false;
+    }
+
+    private void OnDestroy()
+    {
+        GlobalEventManager.OnCommonVolumeChange -= SetVolume;
     }
 }
